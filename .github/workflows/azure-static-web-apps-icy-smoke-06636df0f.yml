@@ -30,7 +30,6 @@ jobs:
           app_location: "/"           # App source code path
           api_location: ""            # Api source code path - optional
           output_location: ""         # Built app content directory - optional
-          form_recognizer_api_key: ${{ secrets.AZURE_FORM_RECOGNIZER_KEY }}  # Added secret
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
@@ -44,3 +43,4 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ICY_SMOKE_06636DF0F }}
           action: "close"
+
