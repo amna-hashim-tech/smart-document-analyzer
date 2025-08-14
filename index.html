@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Document Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Smart Document Analyzer</h1>
+            <p>Upload invoices, receipts, or business cards to extract key information using Azure AI</p>
+        </div>
+
+        <div class="upload-section" id="uploadSection">
+            <div class="upload-icon">📄</div>
+            <h3>Drop your document here or click to browse</h3>
+            <p>Supports PDF, PNG, JPG, JPEG files</p>
+            <input type="file" id="fileInput" class="file-input" accept=".pdf,.png,.jpg,.jpeg">
+            <button class="upload-button" onclick="document.getElementById('fileInput').click()">
+                Choose File
+            </button>
+        </div>
+
+        <div class="file-preview" id="filePreview">
+            <div class="file-info">
+                <div class="file-icon">📄</div>
+                <div>
+                    <div><strong id="fileName">No file selected</strong></div>
+                    <div id="fileSize"></div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <button class="analyze-button" id="analyzeButton" onclick="analyzeDocument()">
+                🔍 Analyze Document
+            </button>
+        </div>
+
+        <div class="error" id="errorMessage"></div>
+
+        <div class="loading" id="loading">
+            <div class="loading-spinner"></div>
+            <h3>Analyzing your document...</h3>
+            <p>This may take a few seconds</p>
+        </div>
+
+        <div class="results" id="results">
+            <div class="success">
+                <strong>✅ Analysis Complete!</strong> Here's what we found in your document:
+            </div>
+            <div id="extractedData"></div>
+        </div>
+    </div>
+
+    <!-- Load configuration and scripts -->
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
